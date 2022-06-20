@@ -38,14 +38,12 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:20, minZoom: 8
-        }).fitBounds([[40.79435889178111,0],[43.44824486604283,4]]);
+        }).fitBounds([[40,-0.5],[43,4]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var bounds_group = new L.featureGroup([]);
-    /*    function setBounds() {
-            map.setMaxBounds(map.getBounds());
-        }*/
+    	map.panTo(new L.LatLng(41.2,1.8));
         map.createPane('pane_GoogleSatellite_0');
         map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
 		
